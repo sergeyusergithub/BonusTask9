@@ -49,6 +49,12 @@ int main() {
 				break;
 		}
 		std::cin >> m;
+		if (m == 6 && pd != nullptr) {
+			delete[] pd;
+			pd = nullptr;
+			std::cout << "Память освобождена!\n";
+		}
+			
 	}
 
 	std::cout << "\n\n";
@@ -103,8 +109,11 @@ int main() {
 			std::cout << "true ";
 
 	std::cout << "\n\n";
-	
 
+	for (int i = 0; i < rows; i++)
+		delete[] ppmx[i];
+	
+	delete[] ppmx;
 
 	return 0;
 }
